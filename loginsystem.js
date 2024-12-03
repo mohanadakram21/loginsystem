@@ -21,7 +21,10 @@ function adduser() {
 ) {
     alert.classList.remove("d-none");   
     console.error("All fields are required!");
-    return;      
+    cleardata()
+    return;   
+    
+    
 }
 
 var isDuplicate = alluser.some(user => user.useremail === useremail.value.trim());
@@ -43,10 +46,15 @@ var userid = {
      localStorage.setItem("userid", JSON.stringify(alluser));
      alert.classList.add("d-none"); 
      suss.classList.remove("d-none"); 
+     cleardata()
 
     }
 
-  
+  function cleardata(){
+   useremail.value=null;
+    username.value=null;
+    userpass.value=null;
+  }
   
   
 
